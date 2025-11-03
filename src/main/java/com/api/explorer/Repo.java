@@ -1,6 +1,7 @@
 package com.api.explorer;
 
 
+//POJO Plain java object
 public class Repo {
     public Integer id;
     public String name;
