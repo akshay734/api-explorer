@@ -11,15 +11,19 @@ public class ExploreService {
     private UserModel userModel;
     @Autowired
     private ExplorerRespository explorerRespository;
+    @Autowired
+    private Explorerapi explorerapi;
     private Users users;
+    private String resultapi;
 
     public Users getUsermodel(String username){
         System.out.println("inside getUsermodel"+username);
-        return explorerRespository.getUser(username);
-//        userModel.setName(users.getName());
-//        userModel.setPhonenumber(users.getPhonenumber());
-//        userModel.setAge(users.getAge());
-        //return userModel;
+        System.out.println(explorerRespository.getUser(username));
+        return null;
+    }
+    public List getRepoall(){
+        System.out.println(explorerapi.getApiallRepoofuser());
+        return explorerapi.getApiallRepoofuser();
 
     }
 }
