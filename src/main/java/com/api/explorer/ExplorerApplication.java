@@ -11,6 +11,7 @@ public class ExplorerApplication implements CommandLineRunner {
 	@Autowired
 	private ExploreService exploreService;
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(ExplorerApplication.class, args);
 	}
@@ -18,7 +19,13 @@ public class ExplorerApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("Application started");
-		System.out.print(exploreService.getUsermodel("akshay"));
-		System.out.println("new change");
+		if(args.length>0 && args[0].equals("0")) {
+			System.out.print(exploreService.getUsermodel("akshay"));
+		}
+		if(args.length>0 && args[0].equals("1")){
+			System.out.println("\ncalling arg1");
+			exploreService.getRepoall();
+
+		}
 	}
 }
